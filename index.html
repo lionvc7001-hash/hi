@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biotechnology Intelligence & OSINT Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="bg-particles"></div>
+        <svg class="bg-dna" viewBox="0 0 100 400" preserveAspectRatio="none">
+            <g opacity="0.08">
+                <circle cx="30" cy="50" r="2" class="dna-dot"></circle>
+                <circle cx="70" cy="70" r="2" class="dna-dot"></circle>
+                <line x1="30" y1="50" x2="70" y2="70" stroke="#FF3B3B" stroke-width="0.5"></line>
+                <circle cx="25" cy="150" r="2" class="dna-dot"></circle>
+                <circle cx="75" cy="170" r="2" class="dna-dot"></circle>
+                <line x1="25" y1="150" x2="75" y2="170" stroke="#FF3B3B" stroke-width="0.5"></line>
+                <circle cx="35" cy="250" r="2" class="dna-dot"></circle>
+                <circle cx="65" cy="270" r="2" class="dna-dot"></circle>
+                <line x1="35" y1="250" x2="65" y2="270" stroke="#FF3B3B" stroke-width="0.5"></line>
+            </g>
+        </svg>
+        <div class="bio-hexagons">
+            <div class="hexagon" style="left: 10%; top: 15%;"></div>
+            <div class="hexagon" style="left: 85%; top: 25%;"></div>
+            <div class="hexagon" style="left: 20%; bottom: 20%;"></div>
+            <div class="hexagon" style="right: 10%; bottom: 30%;"></div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" class="logo-icon">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF3B3B;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#B00020;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="16" cy="10" r="3" fill="url(#logoGrad)"></circle>
+                    <circle cx="10" cy="18" r="3" fill="url(#logoGrad)"></circle>
+                    <circle cx="22" cy="18" r="3" fill="url(#logoGrad)"></circle>
+                    <circle cx="16" cy="26" r="3" fill="url(#logoGrad)"></circle>
+                    <line x1="16" y1="10" x2="10" y2="18" stroke="#FF3B3B" stroke-width="1" opacity="0.6"></line>
+                    <line x1="16" y1="10" x2="22" y2="18" stroke="#FF3B3B" stroke-width="1" opacity="0.6"></line>
+                    <line x1="10" y1="18" x2="16" y2="26" stroke="#FF3B3B" stroke-width="1" opacity="0.6"></line>
+                    <line x1="22" y1="18" x2="16" y2="26" stroke="#FF3B3B" stroke-width="1" opacity="0.6"></line>
+                </svg>
+                <span class="logo-text">BioINT</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active">Dashboard</a>
+                <a href="#" class="nav-link">Research</a>
+                <a href="#" class="nav-link">Threats</a>
+                <a href="#" class="nav-link">Analytics</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="action-btn search-btn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="action-btn notification-btn" aria-label="Notifications">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="notification-dot"></span>
+                </button>
+                <button class="action-btn theme-toggle" aria-label="Toggle Theme">
+                    <svg width="18" height="18" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <div class="profile-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar sidebar-left">
+            <div class="sidebar-toggle" aria-label="Toggle Sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-icon active" title="Dashboard">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                </a>
+                <a href="#" class="sidebar-icon" title="Research">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="sidebar-icon" title="Threats">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polygon points="12 2 15.09 10.26 24 12.52 18 18.77 19.18 27.88 12 23.77 4.82 27.88 6 18.77 0 12.52 8.91 10.26 12 2"></polygon>
+                    </svg>
+                </a>
+                <a href="#" class="sidebar-icon" title="Analytics">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="12" y1="2" x2="12" y2="22"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </a>
+                <a href="#" class="sidebar-icon" title="Settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 0l4.24-4.24M1 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-5.08 0l-4.24 4.24"></path>
+                    </svg>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Center Content -->
+        <main class="main-content">
+            <!-- Hero Section with Globe -->
+            <section class="hero-section">
+                <div class="globe-container">
+                    <!-- 3D Globe Built with HTML, CSS, SVG -->
+                    <div class="globe">
+                        <svg class="globe-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <radialGradient id="globeGradient" cx="35%" cy="35%">
+                                    <stop offset="0%" style="stop-color:#1a4d7a;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#0a1f2e;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="glowFilter">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <!-- Globe sphere -->
+                            <circle cx="200" cy="200" r="150" fill="url(#globeGradient)" class="globe-sphere"></circle>
+                            <!-- Atmospheric glow -->
+                            <circle cx="200" cy="200" r="160" fill="none" stroke="#FF3B3B" stroke-width="1" opacity="0.1" class="globe-atmosphere"></circle>
+                            <!-- Latitude lines -->
+                            <g stroke="rgba(255, 59, 59, 0.15)" stroke-width="0.5" fill="none">
+                                <circle cx="200" cy="200" r="150" class="latitude"></circle>
+                                <ellipse cx="200" cy="200" rx="150" ry="110" class="latitude"></ellipse>
+                                <ellipse cx="200" cy="200" rx="150" ry="70" class="latitude"></ellipse>
+                                <ellipse cx="200" cy="200" rx="150" ry="30" class="latitude"></ellipse>
+                            </g>
+                            <!-- Longitude lines -->
+                            <g stroke="rgba(255, 59, 59, 0.15)" stroke-width="0.5" fill="none" opacity="0.6">
+                                <line x1="200" y1="50" x2="200" y2="350" class="longitude"></line>
+                                <line x1="200" y1="200" x2="320" y2="200" class="longitude" transform="rotate(45 200 200)"></line>
+                                <line x1="200" y1="200" x2="80" y2="200" class="longitude" transform="rotate(45 200 200)"></line>
+                                <line x1="200" y1="200" x2="200" y2="50" class="longitude" transform="rotate(90 200 200)"></line>
+                            </g>
+                            <!-- Biotech nodes on globe -->
+                            <g class="biotech-nodes">
+                                <circle cx="220" cy="170" r="4" fill="#FF3B3B" class="node-pulse" opacity="0.8"></circle>
+                                <circle cx="180" cy="220" r="3" fill="#FF3B3B" class="node-pulse" opacity="0.6"></circle>
+                                <circle cx="240" cy="210" r="3.5" fill="#FF3B3B" class="node-pulse" opacity="0.7"></circle>
+                                <circle cx="160" cy="190" r="2.5" fill="#FF3B3B" class="node-pulse" opacity="0.5"></circle>
+                            </g>
+                            <!-- Scanning beam -->
+                            <g class="scan-beam" opacity="0.3">
+                                <line x1="200" y1="50" x2="200" y2="350" stroke="#FF3B3B" stroke-width="1" class="scanner"></line>
+                            </g>
+                        </svg>
+                        <!-- Orbit rings -->
+                        <div class="orbit-ring orbit-1"></div>
+                        <div class="orbit-ring orbit-2"></div>
+                    </div>
+                    <!-- Floating biotech particles around globe -->
+                    <div class="floating-particles">
+                        <div class="particle" style="--angle: 0deg; --distance: 200px; --delay: 0s;"></div>
+                        <div class="particle" style="--angle: 45deg; --distance: 220px; --delay: 1s;"></div>
+                        <div class="particle" style="--angle: 90deg; --distance: 210px; --delay: 2s;"></div>
+                        <div class="particle" style="--angle: 135deg; --distance: 225px; --delay: 3s;"></div>
+                        <div class="particle" style="--angle: 180deg; --distance: 215px; --delay: 4s;"></div>
+                        <div class="particle" style="--angle: 225deg; --distance: 220px; --delay: 5s;"></div>
+                        <div class="particle" style="--angle: 270deg; --distance: 210px; --delay: 6s;"></div>
+                        <div class="particle" style="--angle: 315deg; --distance: 225px; --delay: 7s;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Surrounding Intelligence Panels -->
+            <section class="panels-grid">
+                <!-- Top-Left Panel: Latest Research -->
+                <div class="panel panel-top-left">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Latest Research</h3>
+                        <div class="panel-indicator"></div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="research-item">
+                            <span class="research-badge">CRISPR</span>
+                            <p class="research-text">Gene Editing Advances in Oncology</p>
+                            <span class="research-meta">2 hours ago</span>
+                        </div>
+                        <div class="research-item">
+                            <span class="research-badge">mRNA</span>
+                            <p class="research-text">Novel Therapeutic Delivery Systems</p>
+                            <span class="research-meta">4 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top-Right Panel: Clinical Trials -->
+                <div class="panel panel-top-right">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Clinical Trials</h3>
+                        <div class="panel-indicator active"></div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="trial-item">
+                            <span class="trial-phase">Phase III</span>
+                            <p class="trial-name">Immunotherapy Protocol</p>
+                            <div class="trial-progress">
+                                <div class="progress-bar" style="width: 73%;"></div>
+                            </div>
+                        </div>
+                        <div class="trial-item">
+                            <span class="trial-phase">Phase II</span>
+                            <p class="trial-name">Genetic Therapy Study</p>
+                            <div class="trial-progress">
+                                <div class="progress-bar" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom-Left Panel: Genetic Discoveries -->
+                <div class="panel panel-bottom-left">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Genetic Discoveries</h3>
+                        <div class="panel-indicator"></div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="discovery-item">
+                            <span class="discovery-tag">Biomarker</span>
+                            <p class="discovery-text">New Cancer Susceptibility Gene Identified</p>
+                        </div>
+                        <div class="discovery-item">
+                            <span class="discovery-tag">Sequence</span>
+                            <p class="discovery-text">Rare Mutation Pattern Mapped</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom-Right Panel: Regulatory Updates -->
+                <div class="panel panel-bottom-right">
+                    <div class="panel-header">
+                        <h3 class="panel-title">Regulatory Status</h3>
+                        <div class="panel-indicator"></div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="regulatory-item">
+                            <span class="regulatory-status approved">Approved</span>
+                            <p class="regulatory-text">FDA Authorization: New Biologic Drug</p>
+                        </div>
+                        <div class="regulatory-item">
+                            <span class="regulatory-status pending">Pending</span>
+                            <p class="regulatory-text">EMA Review: Gene Therapy Protocol</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Activity Feed -->
+        <aside class="sidebar sidebar-right">
+            <div class="activity-header">
+                <h3>Live Activity</h3>
+                <div class="activity-status-dot"></div>
+            </div>
+            <div class="activity-feed">
+                <!-- PLACEHOLDER: Live biotechnology events will be dynamically inserted here -->
+                <div class="activity-item">
+                    <div class="activity-time">Just Now</div>
+                    <div class="activity-content">
+                        <span class="activity-tag breakthrough">Breakthrough</span>
+                        <p>Novel protein structure discovered</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-time">5 min</div>
+                    <div class="activity-content">
+                        <span class="activity-tag trial">Trial</span>
+                        <p>Phase II trial shows positive results</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-time">12 min</div>
+                    <div class="activity-content">
+                        <span class="activity-tag funding">Funding</span>
+                        <p>$50M investment in synthetic biology</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-time">28 min</div>
+                    <div class="activity-content">
+                        <span class="activity-tag threat">Threat</span>
+                        <p>Biosecurity concern flagged</p>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-time">1h ago</div>
+                    <div class="activity-content">
+                        <span class="activity-tag research">Research</span>
+                        <p>Publication: CRISPR applications in agriculture</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Bottom Statistics Panel -->
+    <footer class="footer-stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-label">Active Threats</div>
+                <div class="stat-number" data-value="1247">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Clinical Trials</div>
+                <div class="stat-number" data-value="3891">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Publications</div>
+                <div class="stat-number" data-value="12456">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Gene Sequences</div>
+                <div class="stat-number" data-value="8924561">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Compounds Analyzed</div>
+                <div class="stat-number" data-value="567890">0</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
